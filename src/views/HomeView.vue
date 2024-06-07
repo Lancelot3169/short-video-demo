@@ -1,11 +1,10 @@
 
 <template>
-  <main>
+  <main :class="{'vid-portrait': videoOrientation === 2}">
     <video ref="videoRef" class="video-js" 
     playsinline
     webkit-playsinline
     x5-video-player-type
-    :class="{'vid-portrait': videoOrientation === 2}"
     ></video>
   </main>
 </template>
@@ -106,9 +105,9 @@ onMounted(() => {
     position: relative;
     z-index: -1;
   }
+}
 
-  &.vid-portrait {
-    object-fit: cover;
-  }
+.vid-portrait .video-js {
+  object-fit: cover;
 }
 </style>
